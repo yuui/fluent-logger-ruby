@@ -134,19 +134,19 @@ EOF
         queue.last.should == ['logger-test.tag', data]
       }
 
-      it ('msgpack unsupport data') {
-        data = {
-          'time'   => Time.utc(2008, 9, 1, 10, 5, 0),
-          'object' => Object.new,
-          'proc'   => proc { 1 },
-        }
-        logger.post('tag', data)
-        wait_transfer
-        logger_data = queue.last.last
-        logger_data['time'].should == '2008-09-01 10:05:00 UTC'
-        logger_data['proc'].should be
-        logger_data['object'].should be
-      }
+      # it ('msgpack unsupport data') {
+      #   data = {
+      #     'time'   => Time.utc(2008, 9, 1, 10, 5, 0),
+      #     'object' => Object.new,
+      #     'proc'   => proc { 1 },
+      #   }
+      #   logger.post('tag', data)
+      #   wait_transfer
+      #   logger_data = queue.last.last
+      #   logger_data['time'].should == '2008-09-01 10:05:00 UTC'
+      #   logger_data['proc'].should be
+      #   logger_data['object'].should be
+      # }
 
       it ('msgpack and JSON unsupport data') {
         data = {
