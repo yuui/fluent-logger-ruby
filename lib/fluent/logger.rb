@@ -18,12 +18,12 @@
 module Fluent
 
 module Logger
-  autoload :ConsoleLogger , 'fluent/logger/console_logger'
+  # autoload :ConsoleLogger , 'fluent/logger/console_logger'
   autoload :FluentLogger  , 'fluent/logger/fluent_logger'
   autoload :LoggerBase    , 'fluent/logger/logger_base'
-  autoload :TestLogger    , 'fluent/logger/test_logger'
-  autoload :TextLogger    , 'fluent/logger/text_logger'
-  autoload :NullLogger    , 'fluent/logger/null_logger'
+  # autoload :TestLogger    , 'fluent/logger/test_logger'
+  # autoload :TextLogger    , 'fluent/logger/text_logger'
+  # autoload :NullLogger    , 'fluent/logger/null_logger'
   autoload :VERSION       , 'fluent/logger/version'
 
   @@default_logger = nil
@@ -58,7 +58,7 @@ module Logger
   end
 
   def self.default
-    @@default_logger ||= ConsoleLogger.new(STDOUT)
+    @@default_logger ||= FluentLogger.new(STDOUT)
   end
 
   def self.default=(logger)
