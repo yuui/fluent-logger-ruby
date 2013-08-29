@@ -16,10 +16,10 @@ end
 EOF
   }
 
-  unless File.exist?("vendor/fluentd/Gemfile")
-    puts "git submodule update -i"
-    system("git submodule update -i")
-  end
+  # unless File.exist?("vendor/fluentd/Gemfile")
+  #   puts "git submodule update -i"
+  #   system("git submodule update -i")
+  # end
 
   gem.name        = %q{fluent-logger}
   gem.version     = version
@@ -36,9 +36,9 @@ EOF
   gem.require_paths = ['lib']
 
   # gem.add_dependency 'yajl-ruby', '~> 1.0'
-  gem.add_dependency "msgpack", [">= 0.4.4", "!= 0.5.0", "!= 0.5.1", "!= 0.5.2", "!= 0.5.3", "< 0.6.0"]
-  gem.add_development_dependency 'rake', '>= 0.9.2'
-  gem.add_development_dependency 'rspec', '>= 2.7.0'
-  gem.add_development_dependency 'simplecov', '>= 0.5.4'
+  gem.add_dependency "msgpack", "0.4.5"
+  # gem.add_development_dependency 'rake', '>= 0.9.2'
+  # gem.add_development_dependency 'rspec', '>= 2.7.0'
+  # gem.add_development_dependency 'simplecov', '>= 0.5.4'
   gem.add_development_dependency 'timecop', '>= 0.3.0'
 end
